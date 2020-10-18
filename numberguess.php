@@ -77,28 +77,28 @@
             <tr>
                 <td colspan="2">
                      <!-- PHP Scripts -->
-<?php 
+                    <?php 
 
-// data from form being stored in variable
-if($_SERVER["REQUEST_METHOD"] == "POST")
-{
-    $number = $_REQUEST['num'];
-    $randomnum = mt_rand(1, 10);
+                    // data from form being stored in variable
+                    if($_SERVER["REQUEST_METHOD"] == "POST")
+                    {
+                        $number = $_REQUEST['num'];
+                        $randomnum = mt_rand(1, 10);
 
-    if(($number > 0) && ($number < 11)) 
-        {
-            if ($number != $randomnum)
-            {
-                echo "That is incorrect. The correct number is: $randomnum. Please try again.";
-            }
-            else
-            {
-                echo "That is correct! $randomnum is the correct answer!";
-            }
-        }
-    
-}
-?>  
+                        if(($number > 0) && ($number < 11)) 
+                            {
+                                if ($number != $randomnum)
+                                {
+                                    echo "That is incorrect. The correct number is: $randomnum. Please try again.";
+                                }
+                                else
+                                {
+                                    echo "That is correct! $randomnum is the correct answer!";
+                                }
+                            }
+
+                    }
+                    ?>  
                 </td>
             </tr>
         </form>
