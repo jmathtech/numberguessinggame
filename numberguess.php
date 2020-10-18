@@ -14,7 +14,7 @@
         }
 
         table {
-            background-color: #7622e3;
+            background-image: linear-gradient(180deg, rgb(60, 16, 110) , rgb(173, 147, 245));
             border-radius: 10px;
             box-shadow: 0 3px 6px 0 #9c9c9c;
             padding: 20px;
@@ -77,28 +77,28 @@
             <tr>
                 <td colspan="2">
                      <!-- PHP Scripts -->
-                    <?php 
+                        <?php 
 
-                    // data from form being stored in variable
-                    if($_SERVER["REQUEST_METHOD"] == "POST")
-                    {
-                        $number = $_REQUEST['num'];
-                        $randomnum = mt_rand(1, 10);
+                        // data from form being stored in variable
+                        if($_SERVER["REQUEST_METHOD"] == "POST")
+                        {
+                            $number = $_REQUEST['num'];
+                            $randomnum = mt_rand(1, 10);
 
-                        if(($number > 0) && ($number < 11)) 
-                            {
-                                if ($number != $randomnum)
+                            if(($number > 0) && ($number < 11)) 
                                 {
-                                    echo "That is incorrect. The correct number is: $randomnum. Please try again.";
+                                    if ($number != $randomnum)
+                                    {
+                                        echo "That is incorrect. The correct number is: $randomnum. Please try again.";
+                                    }
+                                    else
+                                    {
+                                        echo "That is correct! $randomnum is the correct answer!";
+                                    }
                                 }
-                                else
-                                {
-                                    echo "That is correct! $randomnum is the correct answer!";
-                                }
-                            }
-
-                    }
-                    ?>  
+                            
+                        }
+                        ?>  
                 </td>
             </tr>
         </form>
